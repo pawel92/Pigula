@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TableView;
 
 /**
@@ -123,6 +124,9 @@ public class MainStageController {
 
     @FXML
     private Label whoItIsLabel;
+    
+    @FXML
+    private Tab employeesTab;
 
 
     @FXML
@@ -247,6 +251,7 @@ public class MainStageController {
         assert showOnlyNotFinishPurchasesCheckbox != null : "fx:id=\"showOnlyNotFinishPurchasesCheckbox\" was not injected: check your FXML file 'MainStage.fxml'.";
         assert showOnlyNotFinishSalesCheckbox != null : "fx:id=\"showOnlyNotFinishSalesCheckbox\" was not injected: check your FXML file 'MainStage.fxml'.";
         assert whoItIsLabel != null : "fx:id=\"whoItIsLabel\" was not injected: check your FXML file 'MainStage.fxml'.";
+        assert employeesTab != null : "fx:id=\"employeesTab\" was not injected: check your FXML file 'MainStage.fxml'.";
 
 
     }

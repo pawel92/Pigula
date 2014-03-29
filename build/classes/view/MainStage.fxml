@@ -272,7 +272,7 @@
             </BorderPane>
           </content>
         </Tab>
-        <Tab closable="false" disable="false" text="Pracownicy">
+        <Tab fx:id="employeesTab" closable="false" disable="false" text="Pracownicy">
           <content>
             <BorderPane prefHeight="200.0" prefWidth="200.0">
               <bottom>
