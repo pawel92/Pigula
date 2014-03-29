@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="501.99995585936995" prefWidth="686.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controller.MainStageController">
+  <center>
+    <TabPane disable="false" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" rotateGraphic="false" side="TOP" tabClosingPolicy="UNAVAILABLE" visible="true">
+      <tabs>
+        <Tab closable="false" text="Wyroby">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <left>
+                    <Label fx:id="filterLabel" prefHeight="42.0" prefWidth="259.0" text="Brak aktywnych filtrów" wrapText="true">
+                      <BorderPane.margin>
+                        <Insets left="10.0" />
+                      </BorderPane.margin>
+                    </Label>
+                  </left>
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button fx:id="filterButton" mnemonicParsing="false" onAction="#filterItemsAction" text="Filtruj" />
+                        <Button id="deleteItems" fx:id="deleteItemsButton" mnemonicParsing="false" onAction="#deleteItemsAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addItemButton" mnemonicParsing="false" onAction="#addItemAction" text="Dodaj wyrób" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView fx:id="itemsTable" editable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="53.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Producent" />
+                    <TableColumn prefWidth="75.0" text="Cena jedn." />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="127.0" text="Rodzaj" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="130.0" text="Dostępnych" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Producenci">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deleteProducersButton" mnemonicParsing="false" onAction="#deleteProducersAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addProducerButton" mnemonicParsing="false" onAction="#addProducerAction" text="Dodaj producenta" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="producersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Ulica" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Miejscowość" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortType="ASCENDING" text="Telefon" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="137.0" text="Osoba kontaktowa" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Dostawcy">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deleteProvidersButton" mnemonicParsing="false" onAction="#deleteProvidersAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addProviderButton" mnemonicParsing="false" onAction="#addProviderAction" text="Dodaj dostawcę" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="providersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Ulica" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Miejscowość" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortType="ASCENDING" text="Telefon" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="137.0" text="Osoba kontaktowa" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Klienci">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deleteCustomersButton" mnemonicParsing="false" onAction="#deleteCustomersAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addCustomerButton" mnemonicParsing="false" onAction="#addCustomerAction" text="Dodaj klienta" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="customersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Ulica" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Miejscowość" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="105.0" sortType="ASCENDING" text="Telefon" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="137.0" text="Osoba kontaktowa" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Sprzedaż">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <left>
+                    <CheckBox fx:id="showOnlyNotFinishSalesCheckbox" allowIndeterminate="false" indeterminate="false" mnemonicParsing="false" onAction="#showOnlyNotFinishSalesCheckboxAction" prefHeight="42.0" prefWidth="268.0" selected="false" text="Pokaż tylko niezakończone transakcje">
+                      <BorderPane.margin>
+                        <Insets left="10.0" />
+                      </BorderPane.margin>
+                    </CheckBox>
+                  </left>
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deleteSalesButton" mnemonicParsing="false" onAction="#deleteSalesAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addSaleButton" mnemonicParsing="false" onAction="#addSaleAction" text="Dodaj sprzedaż" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="salesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Klient" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Wprowadził(a)" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="126.0" text="Data wprowadzenia" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="135.0" sortType="ASCENDING" text="Data zakończenia" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Suma" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Kupno">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <left>
+                    <CheckBox id="showOnlyNotFinishSalesCheckbox" fx:id="showOnlyNotFinishPurchasesCheckbox" allowIndeterminate="false" indeterminate="false" mnemonicParsing="false" onAction="#showOnlyNotFinishPurchasesCheckboxAction" prefHeight="42.0" prefWidth="268.0" selected="false" text="Pokaż tylko niezakończone transakcje">
+                      <BorderPane.margin>
+                        <Insets left="10.0" />
+                      </BorderPane.margin>
+                    </CheckBox>
+                  </left>
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deletePurchasesButton" mnemonicParsing="false" onAction="#deletePurchasesAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addPurchaseButton" mnemonicParsing="false" onAction="#addPurchaseAction" text="Dodaj kupno" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="purchasesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Dostawca" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Wprowadził(a)" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="126.0" text="Data wprowadzenia" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="135.0" sortType="ASCENDING" text="Data zakończenia" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Suma" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" text="Reklamacje">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <left>
+                    <CheckBox id="showOnlyNotFinishSalesCheckbox" fx:id="showOnlyNotFinishComplaintsCheckbox" allowIndeterminate="false" indeterminate="false" mnemonicParsing="false" onAction="#showOnlyNotFinishComplaintsCheckboxAction" prefHeight="42.0" prefWidth="268.0" selected="false" text="Pokaż tylko nierozpatrzone reklamacje">
+                      <BorderPane.margin>
+                        <Insets left="10.0" />
+                      </BorderPane.margin>
+                    </CheckBox>
+                  </left>
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deleteComplaintsButton" mnemonicParsing="false" onAction="#deleteComplaintsAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addComplaintButton" mnemonicParsing="false" onAction="#addComplaintAction" text="Dodaj reklamację" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="complaintsTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Klient" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Id sprzedaży" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="126.0" text="Data wprowadzenia" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="135.0" sortType="ASCENDING" text="Data rozpatrzenia" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="102.0" text="Status" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+        <Tab closable="false" disable="false" text="Pracownicy">
+          <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+              <bottom>
+                <BorderPane prefHeight="41.999900000002526" prefWidth="687.0">
+                  <right>
+                    <HBox alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="318.0" spacing="5.0" BorderPane.alignment="CENTER_RIGHT">
+                      <children>
+                        <Button id="deleteItems" fx:id="deleteEmployeesButton" mnemonicParsing="false" onAction="#deleteEmployeesAction" text="Usuń zaznaczone" />
+                        <Button id="addItem" fx:id="addEmployeeButton" mnemonicParsing="false" onAction="#addEmployeeAction" text="Dodaj pracownika" />
+                      </children>
+                      <padding>
+                        <Insets right="10.0" />
+                      </padding>
+                    </HBox>
+                  </right>
+                </BorderPane>
+              </bottom>
+              <center>
+                <TableView id="mainTable" fx:id="employeesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                  <columns>
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="167.0" text="Numer PESEL" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Imię" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="135.0" sortType="ASCENDING" text="Nazwisko" />
+                  </columns>
+                </TableView>
+              </center>
+            </BorderPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </center>
+  <top>
+    <BorderPane prefHeight="42.0" prefWidth="687.0">
+      <left>
+        <Label fx:id="whoItIsLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" disable="false" focusTraversable="false" prefHeight="42.0" prefWidth="298.0" text="Zalogowany: Jan Kowalski" textOverrun="LEADING_ELLIPSIS" underline="false" visible="true" wrapText="false">
+          <font>
+            <Font size="16.0" />
+          </font>
+          <BorderPane.margin>
+            <Insets left="10.0" />
+          </BorderPane.margin>
+        </Label>
+      </left>
+      <right>
+        <HBox id="HBox" alignment="CENTER" pickOnBounds="true" spacing="5.0">
+          <children>
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#refreshAction" text="Odśwież widok" />
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logoutAction" text="Wyloguj" />
+          </children>
+          <BorderPane.margin>
+            <Insets right="10.0" />
+          </BorderPane.margin>
+        </HBox>
+      </right>
+    </BorderPane>
+  </top>
+</BorderPane>
