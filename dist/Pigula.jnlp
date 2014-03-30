@@ -11,7 +11,9 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Pigula.jar" size="13528" download="eager" />
+    <jar href="Pigula.jar" size="71204" download="eager" />
+    <jar href="lib/jooq-3.1.0.jar" size="1253453" download="eager" />
+    <jar href="lib/sqljdbc4.jar" size="604034" download="eager" />
   </resources>
 <security>
   <all-permissions/>
