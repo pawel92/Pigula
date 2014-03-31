@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.PracownikRecord> {
 
-	private static final long serialVersionUID = 1964163034;
+	private static final long serialVersionUID = 1455996562;
 
 	/**
 	 * The singleton instance of <code>dbo.pracownik</code>
@@ -65,7 +65,7 @@ public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__PRACOWNI__DC3B1BB9C1C35280;
+		return model.dbo.Keys.PK__PRACOWNI__DC3B1BB9F13EAA93;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord>>asList(model.dbo.Keys.PK__PRACOWNI__DC3B1BB9C1C35280);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord>>asList(model.dbo.Keys.PK__PRACOWNI__DC3B1BB9F13EAA93);
 	}
 
 	/**

@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.DostarczaRecord> {
 
-	private static final long serialVersionUID = -526443974;
+	private static final long serialVersionUID = 1347285629;
 
 	/**
 	 * The singleton instance of <code>dbo.dostarcza</code>
@@ -42,6 +42,11 @@ public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	public final org.jooq.TableField<model.dbo.tables.records.DostarczaRecord, java.lang.Integer> IDWYROBU = createField("idWyrobu", org.jooq.impl.SQLDataType.INTEGER, this);
 
 	/**
+	 * The column <code>dbo.dostarcza.czyDostarcza</code>. 
+	 */
+	public final org.jooq.TableField<model.dbo.tables.records.DostarczaRecord, java.lang.Boolean> CZYDOSTARCZA = createField("czyDostarcza", org.jooq.impl.SQLDataType.BIT, this);
+
+	/**
 	 * Create a <code>dbo.dostarcza</code> table reference
 	 */
 	public Dostarcza() {
@@ -68,7 +73,7 @@ public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__DOSTARCZ__3213E83F92B7C7CF;
+		return model.dbo.Keys.PK__DOSTARCZ__3213E83FB4E786CA;
 	}
 
 	/**
@@ -76,7 +81,7 @@ public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord>>asList(model.dbo.Keys.PK__DOSTARCZ__3213E83F92B7C7CF);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord>>asList(model.dbo.Keys.PK__DOSTARCZ__3213E83FB4E786CA);
 	}
 
 	/**

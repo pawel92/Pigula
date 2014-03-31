@@ -11,7 +11,7 @@ package model.dbo;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Dbo extends org.jooq.impl.SchemaImpl {
 
-	private static final long serialVersionUID = -497707597;
+	private static final long serialVersionUID = 1875497551;
 
 	/**
 	 * The singleton instance of <code>dbo</code>
@@ -34,7 +34,8 @@ public class Dbo extends org.jooq.impl.SchemaImpl {
 
 	private final java.util.List<org.jooq.Table<?>> getTables0() {
 		return java.util.Arrays.<org.jooq.Table<?>>asList(
-			model.dbo.tables.Cena.CENA,
+			model.dbo.tables.Cenakupna.CENAKUPNA,
+			model.dbo.tables.Cenasprzedazy.CENASPRZEDAZY,
 			model.dbo.tables.Dostarcza.DOSTARCZA,
 			model.dbo.tables.Dostawca.DOSTAWCA,
 			model.dbo.tables.Elementkupiony.ELEMENTKUPIONY,

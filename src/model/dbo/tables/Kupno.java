@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Kupno extends org.jooq.impl.TableImpl<model.dbo.tables.records.KupnoRecord> {
 
-	private static final long serialVersionUID = 1737785583;
+	private static final long serialVersionUID = 1795171535;
 
 	/**
 	 * The singleton instance of <code>dbo.kupno</code>
@@ -83,7 +83,7 @@ public class Kupno extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kupn
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.KupnoRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__KUPNO__3213E83FDBF8E355;
+		return model.dbo.Keys.PK__KUPNO__3213E83F206308A4;
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class Kupno extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kupn
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.KupnoRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.KupnoRecord>>asList(model.dbo.Keys.PK__KUPNO__3213E83FDBF8E355);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.KupnoRecord>>asList(model.dbo.Keys.PK__KUPNO__3213E83F206308A4);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class Kupno extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kupn
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.KupnoRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.KupnoRecord, ?>>asList(model.dbo.Keys.FK__KUPNO__IDDOSTAWC__36B12243, model.dbo.Keys.FK__KUPNO__IDPRACOWN__37A5467C);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.KupnoRecord, ?>>asList(model.dbo.Keys.FK__KUPNO__IDDOSTAWC__3B75D760, model.dbo.Keys.FK__KUPNO__IDPRACOWN__3C69FB99);
 	}
 
 	/**

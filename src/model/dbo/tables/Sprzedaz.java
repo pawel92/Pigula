@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Sprzedaz extends org.jooq.impl.TableImpl<model.dbo.tables.records.SprzedazRecord> {
 
-	private static final long serialVersionUID = -596003047;
+	private static final long serialVersionUID = 90865537;
 
 	/**
 	 * The singleton instance of <code>dbo.sprzedaz</code>
@@ -83,7 +83,7 @@ public class Sprzedaz extends org.jooq.impl.TableImpl<model.dbo.tables.records.S
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.SprzedazRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__SPRZEDAZ__3213E83FF4BAECFA;
+		return model.dbo.Keys.PK__SPRZEDAZ__3213E83F30FD67B8;
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class Sprzedaz extends org.jooq.impl.TableImpl<model.dbo.tables.records.S
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.SprzedazRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.SprzedazRecord>>asList(model.dbo.Keys.PK__SPRZEDAZ__3213E83FF4BAECFA);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.SprzedazRecord>>asList(model.dbo.Keys.PK__SPRZEDAZ__3213E83F30FD67B8);
 	}
 
 	/**

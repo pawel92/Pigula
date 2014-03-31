@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.KlientRecord> {
 
-	private static final long serialVersionUID = 1717773572;
+	private static final long serialVersionUID = 976228916;
 
 	/**
 	 * The singleton instance of <code>dbo.klient</code>
@@ -98,7 +98,7 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__KLIENT__3213E83FB9F9825C;
+		return model.dbo.Keys.PK__KLIENT__3213E83F1C5E93FD;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord>>asList(model.dbo.Keys.PK__KLIENT__3213E83FB9F9825C);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord>>asList(model.dbo.Keys.PK__KLIENT__3213E83F1C5E93FD);
 	}
 
 	/**

@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Dostawca extends org.jooq.impl.TableImpl<model.dbo.tables.records.DostawcaRecord> {
 
-	private static final long serialVersionUID = 1145163882;
+	private static final long serialVersionUID = -1895956034;
 
 	/**
 	 * The singleton instance of <code>dbo.dostawca</code>
@@ -98,7 +98,7 @@ public class Dostawca extends org.jooq.impl.TableImpl<model.dbo.tables.records.D
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.DostawcaRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__DOSTAWCA__3213E83F3193CB4F;
+		return model.dbo.Keys.PK__DOSTAWCA__3213E83F69866EF5;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class Dostawca extends org.jooq.impl.TableImpl<model.dbo.tables.records.D
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.DostawcaRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.DostawcaRecord>>asList(model.dbo.Keys.PK__DOSTAWCA__3213E83F3193CB4F);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.DostawcaRecord>>asList(model.dbo.Keys.PK__DOSTAWCA__3213E83F69866EF5);
 	}
 
 	/**

@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.ProducentRecord> {
 
-	private static final long serialVersionUID = 573311906;
+	private static final long serialVersionUID = 1890378342;
 
 	/**
 	 * The singleton instance of <code>dbo.producent</code>
@@ -103,7 +103,7 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__PRODUCEN__3213E83FD580F256;
+		return model.dbo.Keys.PK__PRODUCEN__3213E83F0FE70958;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord>>asList(model.dbo.Keys.PK__PRODUCEN__3213E83FD580F256);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord>>asList(model.dbo.Keys.PK__PRODUCEN__3213E83F0FE70958);
 	}
 
 	/**

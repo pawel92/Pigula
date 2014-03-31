@@ -14,9 +14,14 @@ package model.dbo;
 public class Tables {
 
 	/**
-	 * The table dbo.cena
+	 * The table dbo.cenaKupna
 	 */
-	public static final model.dbo.tables.Cena CENA = model.dbo.tables.Cena.CENA;
+	public static final model.dbo.tables.Cenakupna CENAKUPNA = model.dbo.tables.Cenakupna.CENAKUPNA;
+
+	/**
+	 * The table dbo.cenaSprzedazy
+	 */
+	public static final model.dbo.tables.Cenasprzedazy CENASPRZEDAZY = model.dbo.tables.Cenasprzedazy.CENASPRZEDAZY;
 
 	/**
 	 * The table dbo.dostarcza

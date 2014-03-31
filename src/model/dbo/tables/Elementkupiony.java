@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Elementkupiony extends org.jooq.impl.TableImpl<model.dbo.tables.records.ElementkupionyRecord> {
 
-	private static final long serialVersionUID = -23568324;
+	private static final long serialVersionUID = 1766937346;
 
 	/**
 	 * The singleton instance of <code>dbo.elementKupiony</code>
@@ -73,7 +73,7 @@ public class Elementkupiony extends org.jooq.impl.TableImpl<model.dbo.tables.rec
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.ElementkupionyRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__ELEMENTK__3213E83F8A4CA118;
+		return model.dbo.Keys.PK__ELEMENTK__3213E83FFAC949A3;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class Elementkupiony extends org.jooq.impl.TableImpl<model.dbo.tables.rec
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.ElementkupionyRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ElementkupionyRecord>>asList(model.dbo.Keys.PK__ELEMENTK__3213E83F8A4CA118);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ElementkupionyRecord>>asList(model.dbo.Keys.PK__ELEMENTK__3213E83FFAC949A3);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class Elementkupiony extends org.jooq.impl.TableImpl<model.dbo.tables.rec
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.ElementkupionyRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.ElementkupionyRecord, ?>>asList(model.dbo.Keys.FK__ELEMENTKU__IDKUP__3C69FB99, model.dbo.Keys.FK__ELEMENTKU__IDWYR__3D5E1FD2);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.ElementkupionyRecord, ?>>asList(model.dbo.Keys.FK__ELEMENTKU__IDKUP__412EB0B6, model.dbo.Keys.FK__ELEMENTKU__IDWYR__4222D4EF);
 	}
 
 	/**
