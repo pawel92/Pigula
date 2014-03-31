@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
+import view.DialogFactory;
 
 public class DbProperties {
     private final static DbProperties ourInstance = new DbProperties();
@@ -53,7 +54,8 @@ public class DbProperties {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(DbProperties.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(DbProperties.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(DbProperties.class.getName()).log(Level.SEVERE, null, ex);
+            DialogFactory.getInstance().showError("Błąd połączenia z bazą danych", ex.getLocalizedMessage());
         }
     }
 }

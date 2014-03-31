@@ -10,7 +10,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,6 +17,7 @@ import model.dbo.DbProperties;
 import static model.dbo.Tables.*;
 import org.jooq.Record;
 import org.jooq.Result;
+import view.DialogFactory;
 
 
 public class LoginStageController {
@@ -36,10 +36,6 @@ public class LoginStageController {
 
     @FXML
     private PasswordField passwordField;
-    
-    @FXML
-    private Label loginFailedLabel;
-
 
     @FXML
     void loginAction(ActionEvent event) throws IOException {
@@ -88,7 +84,7 @@ public class LoginStageController {
      * Pokaż informację o nieudanym logowaniu
      */
     private void showErrorMsg() {
-        loginFailedLabel.setVisible(true);
+          DialogFactory.getInstance().showError("Błąd logowania", "Wprowadzono błędny login lub hasło");
     }
 
     @FXML
@@ -96,6 +92,5 @@ public class LoginStageController {
         assert loginButton != null : "fx:id=\"loginButton\" was not injected: check your FXML file 'LoginStage.fxml'.";
         assert loginField != null : "fx:id=\"loginField\" was not injected: check your FXML file 'LoginStage.fxml'.";
         assert passwordField != null : "fx:id=\"passwordField\" was not injected: check your FXML file 'LoginStage.fxml'.";
-        assert loginFailedLabel != null : "fx:id=\"passwordField\" was not injected: check your FXML file 'LoginStage.fxml'.";
     }
 }
