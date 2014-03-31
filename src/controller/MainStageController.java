@@ -9,6 +9,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableView;
+import model.dbo.DbProperties;
+import static model.dbo.Tables.PRACOWNIK;
+import org.jooq.Record;
+import org.jooq.Result;
 
 /**
  * SŁOWNICZEK:
@@ -127,7 +131,29 @@ public class MainStageController {
     
     @FXML
     private Tab employeesTab;
+    
+    /** 
+     *  PESEL pracownika, który aktualnie korzysta z aplikacji
+     */
+    private String peselOfEmployee;
 
+    public void prepareView(String pesel) {
+        peselOfEmployee = pesel;
+        if(peselOfEmployee.equals("root")){
+            whoItIsLabel.setText("Zalogowany użytkownik: root");
+            return;
+        }
+        Result<Record> result = DbProperties.getInstance().getDsl().select()
+                                           .from(PRACOWNIK)
+                                           .where(PRACOWNIK.PESEL.equal(peselOfEmployee))
+                                           .fetch();
+        /* Ustawienie informacji w górnej belce programu o zalogowanym użytkowniku */
+        whoItIsLabel.setText("Zalogowany użytkownik: "
+                + result.getValue(0, PRACOWNIK.IMIE)
+                + " " + (result.getValue(0, PRACOWNIK.NAZWISKO)));
+        /* Wyłącz zakładkę "Pracownicy" dla pracownika */
+        employeesTab.setDisable(true);
+    }
 
     @FXML
     void addComplaintAction(ActionEvent event) {

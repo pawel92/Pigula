@@ -10,6 +10,9 @@ import org.jooq.SQLDialect;
 import org.jooq.impl.DSL;
 import view.DialogFactory;
 
+/**
+ * Klasa singletonu obiektu umozliwiającego połączenie z bazą danych
+ */
 public class DbProperties {
     private final static DbProperties ourInstance = new DbProperties();
     

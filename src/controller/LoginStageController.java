@@ -39,11 +39,12 @@ public class LoginStageController {
 
     @FXML
     void loginAction(ActionEvent event) throws IOException {
-        if(checkLoginAndPassword(loginField.getText(), passwordField.getText())){
+        String pesel = checkLoginAndPassword(loginField.getText(), passwordField.getText());
+        if(pesel != null){
             /* zamknij okno logowania */
             ((Node)(event.getSource())).getScene().getWindow().hide();
             /* pokaż okno główne */
-            openMainStage();
+            openMainStage(pesel);
         }
         else
             showErrorMsg();
@@ -55,28 +56,33 @@ public class LoginStageController {
      * @param password
      * @return 
      */
-    boolean checkLoginAndPassword(String login, String password){
+    String checkLoginAndPassword(String login, String password){
         Result<Record> result = DbProperties.getInstance().getDsl().select()
                                            .from(PRACOWNIK)
                                            .where(PRACOWNIK.PESEL.equal(login))
                                            .and("pracownik.haslo = CONVERT(NVARCHAR(32),HashBytes('MD5', '"+password+"'),2)")
                                            .fetch();
         if(result.isEmpty())
-            return false;
+            return null;
         else
-            return true;
+            return result.getValue(0, PRACOWNIK.PESEL);
     }
     
     /**
      * Otwórz główne okno programu
      * @throws IOException 
      */
-    private void openMainStage() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/view/MainStage.fxml"));
+    private void openMainStage(String pesel) throws IOException {
+        //Parent root = FXMLLoader.load(getClass().getResource("/view/MainStage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainStage.fxml"));
+        Parent root = loader.load();
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setTitle("System PIGUŁA");
+        
+        MainStageController controller = (MainStageController)loader.getController();
+        controller.prepareView(pesel);
         stage.show();
     }
 

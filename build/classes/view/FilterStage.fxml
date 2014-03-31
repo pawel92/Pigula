@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<FlowPane alignment="CENTER" prefHeight="190.0" prefWidth="580.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="view.FilterStageController">
+  <children>
+    <AnchorPane id="AnchorPane" prefHeight="165.0" prefWidth="545.0">
+      <children>
+        <Label layoutX="0.0" layoutY="3.0" prefWidth="131.0" text="Nazwa zawiera" />
+        <Label layoutX="0.0" layoutY="37.0" text="Tylko od dostawcy" />
+        <Label layoutX="0.0" layoutY="69.0" text="Zawiera składniki" />
+        <CheckBox id="onlyAvailable" fx:id="onlyAvailableItemsCheckbox" layoutX="0.0" layoutY="119.0" mnemonicParsing="false" onAction="#onlyAvailableItemsCheckboxAction" text="Pokaż tylko dostępne wyroby" />
+        <TextField fx:id="nameField" layoutX="146.0" layoutY="0.0" prefWidth="399.0" />
+        <TextField fx:id="providerField" editable="false" layoutX="146.0" layoutY="34.0" onDragDropped="#providerFieldDragDropped" prefWidth="316.0" text="Przeciągnij tutaj element z widoku &quot;Dostawcy&quot;" />
+        <TextField id="contains" fx:id="containsComponentField" layoutX="146.0" layoutY="66.0" prefWidth="399.0" />
+        <Button fx:id="clearProviderButton" layoutX="469.0" layoutY="35.0" mnemonicParsing="false" onAction="#clearProviderAction" text="Wyczyść" />
+        <Label layoutX="146.0" layoutY="96.0" text="Wprowadź składniki oddzielając je średnikiem">
+          <font>
+            <Font name="System Italic" size="12.0" />
+          </font>
+        </Label>
+        <Button id="FiltersO" fx:id="filtersOffButton" layoutX="446.0" layoutY="138.0" mnemonicParsing="false" onAction="#filtersOffAction" text="Wyłącz filtry" />
+        <Button id="activeFiltersButton" fx:id="filtersOnButton" layoutX="332.0" layoutY="138.0" mnemonicParsing="false" onAction="#filtersOnAction" text="Aktywuj filtry" />
+      </children>
+    </AnchorPane>
+  </children>
+</FlowPane>

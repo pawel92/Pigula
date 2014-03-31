@@ -3,6 +3,9 @@ package view;
 import org.controlsfx.control.action.Action;
 import org.controlsfx.dialog.Dialogs;
 
+/** 
+ * Klasa do łatwego wywoływania róznego rodzaju okien dialogowych w różnych miejscach aplikacji
+ */
 public class DialogFactory {
     private final static DialogFactory ourInstance = new DialogFactory();
     

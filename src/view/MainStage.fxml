@@ -39,7 +39,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView fx:id="itemsTable" editable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView fx:id="itemsTable" editable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="53.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
@@ -72,7 +72,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="producersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="producersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
@@ -105,7 +105,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="providersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="providersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
@@ -138,7 +138,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="customersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="customersTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
@@ -178,7 +178,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="salesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="salesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Klient" />
@@ -218,7 +218,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="purchasesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="purchasesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Dostawca" />
@@ -258,7 +258,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="complaintsTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="complaintsTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="45.0" text="Id" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Klient" />
@@ -291,7 +291,7 @@
                 </BorderPane>
               </bottom>
               <center>
-                <TableView id="mainTable" fx:id="employeesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
+                <TableView id="mainTable" fx:id="employeesTable" cache="false" disable="false" editable="true" focusTraversable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="167.0" text="Numer PESEL" />
                     <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Imię" />
@@ -308,7 +308,7 @@
   <top>
     <BorderPane prefHeight="42.0" prefWidth="687.0">
       <left>
-        <Label fx:id="whoItIsLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" disable="false" focusTraversable="false" prefHeight="42.0" prefWidth="298.0" text="Zalogowany: Jan Kowalski" textOverrun="LEADING_ELLIPSIS" underline="false" visible="true" wrapText="false">
+        <Label fx:id="whoItIsLabel" alignment="CENTER_LEFT" contentDisplay="LEFT" disable="false" focusTraversable="false" prefHeight="42.0" prefWidth="442.0" text="Zalogowany: Jan Kowalski" textOverrun="LEADING_ELLIPSIS" underline="false" visible="true" wrapText="false">
           <font>
             <Font size="16.0" />
           </font>
