@@ -23,15 +23,26 @@ public class DbProperties {
     }
     
     private DbProperties() {
-        connect();
     }
     
-    public Connection getConn() {
-        return conn;
+    
+    private void checkConnect(){
+        try {
+            if(conn == null || conn.isClosed())
+                connect();
+        } catch (SQLException ex) {
+            Logger.getLogger(DbProperties.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     public DSLContext getDsl() {
+        checkConnect();
         return dsl;
+    }
+    
+    public Connection getConn() {
+        checkConnect();
+        return conn;
     }
     
     public void connect(){
