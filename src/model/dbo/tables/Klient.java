@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.KlientRecord> {
 
-	private static final long serialVersionUID = 976228916;
+	private static final long serialVersionUID = 1398583642;
 
 	/**
 	 * The singleton instance of <code>dbo.klient</code>
@@ -39,12 +39,12 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	/**
 	 * The column <code>dbo.klient.ulica</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> ULICA = createField("ulica", org.jooq.impl.SQLDataType.VARCHAR.length(80), this);
+	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> ULICA = createField("ulica", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.klient.miejscowosc</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> MIEJSCOWOSC = createField("miejscowosc", org.jooq.impl.SQLDataType.VARCHAR.length(40), this);
+	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> MIEJSCOWOSC = createField("miejscowosc", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.klient.kodPocztowy</code>. 
@@ -54,7 +54,7 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	/**
 	 * The column <code>dbo.klient.telefon</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> TELEFON = createField("telefon", org.jooq.impl.SQLDataType.VARCHAR.length(40), this);
+	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> TELEFON = createField("telefon", org.jooq.impl.SQLDataType.VARCHAR.length(30), this);
 
 	/**
 	 * The column <code>dbo.klient.www</code>. 
@@ -69,7 +69,7 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	/**
 	 * The column <code>dbo.klient.osobaKontaktowa</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> OSOBAKONTAKTOWA = createField("osobaKontaktowa", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
+	public final org.jooq.TableField<model.dbo.tables.records.KlientRecord, java.lang.String> OSOBAKONTAKTOWA = createField("osobaKontaktowa", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * Create a <code>dbo.klient</code> table reference
@@ -98,7 +98,7 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__KLIENT__3213E83F1C5E93FD;
+		return model.dbo.Keys.PK__KLIENT__3213E83FF1C478B6;
 	}
 
 	/**
@@ -106,7 +106,7 @@ public class Klient extends org.jooq.impl.TableImpl<model.dbo.tables.records.Kli
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord>>asList(model.dbo.Keys.PK__KLIENT__3213E83F1C5E93FD);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.KlientRecord>>asList(model.dbo.Keys.PK__KLIENT__3213E83FF1C478B6);
 	}
 
 	/**

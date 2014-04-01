@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Reklamacja extends org.jooq.impl.TableImpl<model.dbo.tables.records.ReklamacjaRecord> {
 
-	private static final long serialVersionUID = -77905663;
+	private static final long serialVersionUID = 1653937961;
 
 	/**
 	 * The singleton instance of <code>dbo.reklamacja</code>
@@ -83,7 +83,7 @@ public class Reklamacja extends org.jooq.impl.TableImpl<model.dbo.tables.records
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.ReklamacjaRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__REKLAMAC__3213E83FC71591E6;
+		return model.dbo.Keys.PK__REKLAMAC__3213E83F79E6DE52;
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class Reklamacja extends org.jooq.impl.TableImpl<model.dbo.tables.records
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.ReklamacjaRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ReklamacjaRecord>>asList(model.dbo.Keys.PK__REKLAMAC__3213E83FC71591E6);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ReklamacjaRecord>>asList(model.dbo.Keys.PK__REKLAMAC__3213E83F79E6DE52);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class Reklamacja extends org.jooq.impl.TableImpl<model.dbo.tables.records
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.ReklamacjaRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.ReklamacjaRecord, ?>>asList(model.dbo.Keys.FK__REKLAMACJ__IDSPR__44FF419A);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.ReklamacjaRecord, ?>>asList(model.dbo.Keys.FK__REKLAMACJ__IDSPR__4AB81AF0);
 	}
 
 	/**

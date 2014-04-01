@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Skladnik extends org.jooq.impl.TableImpl<model.dbo.tables.records.SkladnikRecord> {
 
-	private static final long serialVersionUID = 629824103;
+	private static final long serialVersionUID = 757842065;
 
 	/**
 	 * The singleton instance of <code>dbo.skladnik</code>
@@ -63,7 +63,7 @@ public class Skladnik extends org.jooq.impl.TableImpl<model.dbo.tables.records.S
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.SkladnikRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__SKLADNIK__3213E83F4932C990;
+		return model.dbo.Keys.PK__SKLADNIK__3213E83F07622D28;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class Skladnik extends org.jooq.impl.TableImpl<model.dbo.tables.records.S
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.SkladnikRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.SkladnikRecord>>asList(model.dbo.Keys.PK__SKLADNIK__3213E83F4932C990, model.dbo.Keys.UQ__SKLADNIK__F072DFBE5E526851);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.SkladnikRecord>>asList(model.dbo.Keys.PK__SKLADNIK__3213E83F07622D28, model.dbo.Keys.UQ__SKLADNIK__F072DFBEC6CFAEFA);
 	}
 
 	/**

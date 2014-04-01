@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Jestskladnikiem extends org.jooq.impl.TableImpl<model.dbo.tables.records.JestskladnikiemRecord> {
 
-	private static final long serialVersionUID = 331500548;
+	private static final long serialVersionUID = 40705528;
 
 	/**
 	 * The singleton instance of <code>dbo.jestSkladnikiem</code>
@@ -78,7 +78,7 @@ public class Jestskladnikiem extends org.jooq.impl.TableImpl<model.dbo.tables.re
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.JestskladnikiemRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__JESTSKLA__3213E83F0091D14C;
+		return model.dbo.Keys.PK__JESTSKLA__3213E83FFF4BEA9A;
 	}
 
 	/**
@@ -86,7 +86,7 @@ public class Jestskladnikiem extends org.jooq.impl.TableImpl<model.dbo.tables.re
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.JestskladnikiemRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.JestskladnikiemRecord>>asList(model.dbo.Keys.PK__JESTSKLA__3213E83F0091D14C);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.JestskladnikiemRecord>>asList(model.dbo.Keys.PK__JESTSKLA__3213E83FFF4BEA9A);
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class Jestskladnikiem extends org.jooq.impl.TableImpl<model.dbo.tables.re
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.JestskladnikiemRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.JestskladnikiemRecord, ?>>asList(model.dbo.Keys.FK__JESTSKLAD__IDWYR__20C1E124, model.dbo.Keys.FK__JESTSKLAD__IDSKL__21B6055D);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.JestskladnikiemRecord, ?>>asList(model.dbo.Keys.FK__JESTSKLAD__IDWYR__24927208, model.dbo.Keys.FK__JESTSKLAD__IDSKL__25869641);
 	}
 
 	/**

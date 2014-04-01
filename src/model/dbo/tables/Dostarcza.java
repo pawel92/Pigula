@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.DostarczaRecord> {
 
-	private static final long serialVersionUID = 1347285629;
+	private static final long serialVersionUID = -2020372039;
 
 	/**
 	 * The singleton instance of <code>dbo.dostarcza</code>
@@ -73,7 +73,7 @@ public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__DOSTARCZ__3213E83FB4E786CA;
+		return model.dbo.Keys.PK__DOSTARCZ__3213E83F2A28BA83;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord>>asList(model.dbo.Keys.PK__DOSTARCZ__3213E83FB4E786CA);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.DostarczaRecord>>asList(model.dbo.Keys.PK__DOSTARCZ__3213E83F2A28BA83);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class Dostarcza extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.DostarczaRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.DostarczaRecord, ?>>asList(model.dbo.Keys.FK__DOSTARCZA__IDDOS__32E0915F, model.dbo.Keys.FK__DOSTARCZA__IDWYR__33D4B598);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.DostarczaRecord, ?>>asList(model.dbo.Keys.FK__DOSTARCZA__IDDOS__36B12243, model.dbo.Keys.FK__DOSTARCZA__IDWYR__37A5467C);
 	}
 
 	/**

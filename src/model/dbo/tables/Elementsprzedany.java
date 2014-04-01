@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Elementsprzedany extends org.jooq.impl.TableImpl<model.dbo.tables.records.ElementsprzedanyRecord> {
 
-	private static final long serialVersionUID = 2116816399;
+	private static final long serialVersionUID = 2051259713;
 
 	/**
 	 * The singleton instance of <code>dbo.elementSprzedany</code>
@@ -47,6 +47,11 @@ public class Elementsprzedany extends org.jooq.impl.TableImpl<model.dbo.tables.r
 	public final org.jooq.TableField<model.dbo.tables.records.ElementsprzedanyRecord, java.lang.Integer> ILOSC = createField("ilosc", org.jooq.impl.SQLDataType.INTEGER, this);
 
 	/**
+	 * The column <code>dbo.elementSprzedany.cenaBrutto</code>. 
+	 */
+	public final org.jooq.TableField<model.dbo.tables.records.ElementsprzedanyRecord, java.lang.Double> CENABRUTTO = createField("cenaBrutto", org.jooq.impl.SQLDataType.FLOAT, this);
+
+	/**
 	 * Create a <code>dbo.elementSprzedany</code> table reference
 	 */
 	public Elementsprzedany() {
@@ -73,7 +78,7 @@ public class Elementsprzedany extends org.jooq.impl.TableImpl<model.dbo.tables.r
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.ElementsprzedanyRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__ELEMENTS__3213E83FBB53804D;
+		return model.dbo.Keys.PK__ELEMENTS__3213E83FD16344FB;
 	}
 
 	/**
@@ -81,7 +86,7 @@ public class Elementsprzedany extends org.jooq.impl.TableImpl<model.dbo.tables.r
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.ElementsprzedanyRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ElementsprzedanyRecord>>asList(model.dbo.Keys.PK__ELEMENTS__3213E83FBB53804D);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ElementsprzedanyRecord>>asList(model.dbo.Keys.PK__ELEMENTS__3213E83FD16344FB);
 	}
 
 	/**
@@ -89,7 +94,7 @@ public class Elementsprzedany extends org.jooq.impl.TableImpl<model.dbo.tables.r
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.ElementsprzedanyRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.ElementsprzedanyRecord, ?>>asList(model.dbo.Keys.FK__ELEMENTSP__IDSPR__2A4B4B5E, model.dbo.Keys.FK__ELEMENTSP__IDWYR__2B3F6F97);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.ElementsprzedanyRecord, ?>>asList(model.dbo.Keys.FK__ELEMENTSP__IDSPR__2E1BDC42, model.dbo.Keys.FK__ELEMENTSP__IDWYR__2F10007B);
 	}
 
 	/**

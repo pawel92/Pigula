@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.ProducentRecord> {
 
-	private static final long serialVersionUID = 1890378342;
+	private static final long serialVersionUID = -1898505980;
 
 	/**
 	 * The singleton instance of <code>dbo.producent</code>
@@ -39,12 +39,12 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	/**
 	 * The column <code>dbo.producent.ulica</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> ULICA = createField("ulica", org.jooq.impl.SQLDataType.VARCHAR.length(80), this);
+	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> ULICA = createField("ulica", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.producent.miejscowosc</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> MIEJSCOWOSC = createField("miejscowosc", org.jooq.impl.SQLDataType.VARCHAR.length(40), this);
+	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> MIEJSCOWOSC = createField("miejscowosc", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.producent.kodPocztowy</code>. 
@@ -54,12 +54,12 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	/**
 	 * The column <code>dbo.producent.kraj</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> KRAJ = createField("kraj", org.jooq.impl.SQLDataType.VARCHAR.length(40), this);
+	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> KRAJ = createField("kraj", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.producent.telefon</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> TELEFON = createField("telefon", org.jooq.impl.SQLDataType.VARCHAR.length(40), this);
+	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> TELEFON = createField("telefon", org.jooq.impl.SQLDataType.VARCHAR.length(30), this);
 
 	/**
 	 * The column <code>dbo.producent.www</code>. 
@@ -74,7 +74,7 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	/**
 	 * The column <code>dbo.producent.osobaKontaktowa</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> OSOBAKONTAKTOWA = createField("osobaKontaktowa", org.jooq.impl.SQLDataType.VARCHAR.length(50), this);
+	public final org.jooq.TableField<model.dbo.tables.records.ProducentRecord, java.lang.String> OSOBAKONTAKTOWA = createField("osobaKontaktowa", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * Create a <code>dbo.producent</code> table reference
@@ -103,7 +103,7 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__PRODUCEN__3213E83F0FE70958;
+		return model.dbo.Keys.PK__PRODUCEN__3213E83F0DEE9B0F;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class Producent extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord>>asList(model.dbo.Keys.PK__PRODUCEN__3213E83F0FE70958);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.ProducentRecord>>asList(model.dbo.Keys.PK__PRODUCEN__3213E83F0DEE9B0F);
 	}
 
 	/**

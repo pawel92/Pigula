@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Wyrob extends org.jooq.impl.TableImpl<model.dbo.tables.records.WyrobRecord> {
 
-	private static final long serialVersionUID = -839475933;
+	private static final long serialVersionUID = -1866660594;
 
 	/**
 	 * The singleton instance of <code>dbo.wyrob</code>
@@ -78,7 +78,7 @@ public class Wyrob extends org.jooq.impl.TableImpl<model.dbo.tables.records.Wyro
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.WyrobRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__WYROB__3213E83F795B67EE;
+		return model.dbo.Keys.PK__WYROB__3213E83F59DCAF92;
 	}
 
 	/**
@@ -86,7 +86,15 @@ public class Wyrob extends org.jooq.impl.TableImpl<model.dbo.tables.records.Wyro
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.WyrobRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.WyrobRecord>>asList(model.dbo.Keys.PK__WYROB__3213E83F795B67EE);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.WyrobRecord>>asList(model.dbo.Keys.PK__WYROB__3213E83F59DCAF92);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.WyrobRecord, ?>> getReferences() {
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.WyrobRecord, ?>>asList(model.dbo.Keys.FK__WYROB__PRODUCENT__15502E78, model.dbo.Keys.FK__WYROB__RODZAJWYR__164452B1);
 	}
 
 	/**

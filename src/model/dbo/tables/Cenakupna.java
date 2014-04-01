@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Cenakupna extends org.jooq.impl.TableImpl<model.dbo.tables.records.CenakupnaRecord> {
 
-	private static final long serialVersionUID = 649725626;
+	private static final long serialVersionUID = -236188978;
 
 	/**
 	 * The singleton instance of <code>dbo.cenaKupna</code>
@@ -73,7 +73,7 @@ public class Cenakupna extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.CenakupnaRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__CENAKUPN__3213E83FA9059CE0;
+		return model.dbo.Keys.PK__CENAKUPN__3213E83FB22AE271;
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class Cenakupna extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.CenakupnaRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.CenakupnaRecord>>asList(model.dbo.Keys.PK__CENAKUPN__3213E83FA9059CE0);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.CenakupnaRecord>>asList(model.dbo.Keys.PK__CENAKUPN__3213E83FB22AE271);
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class Cenakupna extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.ForeignKey<model.dbo.tables.records.CenakupnaRecord, ?>> getReferences() {
-		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.CenakupnaRecord, ?>>asList(model.dbo.Keys.FK__CENAKUPNA__IDDOS__37A5467C);
+		return java.util.Arrays.<org.jooq.ForeignKey<model.dbo.tables.records.CenakupnaRecord, ?>>asList(model.dbo.Keys.FK__CENAKUPNA__IDDOS__3B75D760);
 	}
 
 	/**

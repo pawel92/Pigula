@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Rodzajwyrobu extends org.jooq.impl.TableImpl<model.dbo.tables.records.RodzajwyrobuRecord> {
 
-	private static final long serialVersionUID = 2120351568;
+	private static final long serialVersionUID = -1863345538;
 
 	/**
 	 * The singleton instance of <code>dbo.rodzajWyrobu</code>
@@ -34,7 +34,7 @@ public class Rodzajwyrobu extends org.jooq.impl.TableImpl<model.dbo.tables.recor
 	/**
 	 * The column <code>dbo.rodzajWyrobu.rodzaj</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.RodzajwyrobuRecord, java.lang.String> RODZAJ = createField("rodzaj", org.jooq.impl.SQLDataType.VARCHAR.length(40), this);
+	public final org.jooq.TableField<model.dbo.tables.records.RodzajwyrobuRecord, java.lang.String> RODZAJ = createField("rodzaj", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * Create a <code>dbo.rodzajWyrobu</code> table reference
@@ -63,7 +63,7 @@ public class Rodzajwyrobu extends org.jooq.impl.TableImpl<model.dbo.tables.recor
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.RodzajwyrobuRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__RODZAJWY__3213E83FDC99F044;
+		return model.dbo.Keys.PK__RODZAJWY__3213E83F0637179D;
 	}
 
 	/**
@@ -71,7 +71,7 @@ public class Rodzajwyrobu extends org.jooq.impl.TableImpl<model.dbo.tables.recor
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.RodzajwyrobuRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.RodzajwyrobuRecord>>asList(model.dbo.Keys.PK__RODZAJWY__3213E83FDC99F044);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.RodzajwyrobuRecord>>asList(model.dbo.Keys.PK__RODZAJWY__3213E83F0637179D);
 	}
 
 	/**

@@ -11,7 +11,7 @@ package model.dbo.tables;
 @java.lang.SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.PracownikRecord> {
 
-	private static final long serialVersionUID = 1455996562;
+	private static final long serialVersionUID = 1475614443;
 
 	/**
 	 * The singleton instance of <code>dbo.pracownik</code>
@@ -34,12 +34,12 @@ public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	/**
 	 * The column <code>dbo.pracownik.imie</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.PracownikRecord, java.lang.String> IMIE = createField("imie", org.jooq.impl.SQLDataType.VARCHAR.length(20), this);
+	public final org.jooq.TableField<model.dbo.tables.records.PracownikRecord, java.lang.String> IMIE = createField("imie", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.pracownik.nazwisko</code>. 
 	 */
-	public final org.jooq.TableField<model.dbo.tables.records.PracownikRecord, java.lang.String> NAZWISKO = createField("nazwisko", org.jooq.impl.SQLDataType.VARCHAR.length(30), this);
+	public final org.jooq.TableField<model.dbo.tables.records.PracownikRecord, java.lang.String> NAZWISKO = createField("nazwisko", org.jooq.impl.SQLDataType.VARCHAR.length(255), this);
 
 	/**
 	 * The column <code>dbo.pracownik.haslo</code>. 
@@ -65,7 +65,7 @@ public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord> getPrimaryKey() {
-		return model.dbo.Keys.PK__PRACOWNI__DC3B1BB9F13EAA93;
+		return model.dbo.Keys.PK__PRACOWNI__DC3B1BB9358549C1;
 	}
 
 	/**
@@ -73,7 +73,7 @@ public class Pracownik extends org.jooq.impl.TableImpl<model.dbo.tables.records.
 	 */
 	@Override
 	public java.util.List<org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord>> getKeys() {
-		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord>>asList(model.dbo.Keys.PK__PRACOWNI__DC3B1BB9F13EAA93);
+		return java.util.Arrays.<org.jooq.UniqueKey<model.dbo.tables.records.PracownikRecord>>asList(model.dbo.Keys.PK__PRACOWNI__DC3B1BB9358549C1);
 	}
 
 	/**
