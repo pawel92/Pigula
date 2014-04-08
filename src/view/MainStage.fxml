@@ -41,12 +41,12 @@
               <center>
                 <TableView fx:id="itemsTable" editable="true" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="false">
                   <columns>
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="53.0" text="Id" />
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" />
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Producent" />
-                    <TableColumn prefWidth="75.0" text="Cena jedn." />
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="127.0" text="Rodzaj" />
-                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="130.0" text="Dostępnych" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="53.0" text="Id" fx:id="itemsTableId" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="164.0" text="Nazwa" fx:id="itemsTableName" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="110.0" text="Producent" fx:id="itemsTableProducer" />
+                    <TableColumn prefWidth="75.0" text="Cena jedn." fx:id="itemsTableUnitPrice" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="127.0" text="Rodzaj" fx:id="itemsTableType" />
+                    <TableColumn maxWidth="5000.0" minWidth="10.0" prefWidth="130.0" text="Dostępnych" fx:id="itemsTableAvailability" />
                   </columns>
                 </TableView>
               </center>
