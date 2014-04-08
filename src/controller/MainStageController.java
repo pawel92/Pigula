@@ -17,9 +17,20 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.dbo.DbProperties;
+import static model.dbo.Tables.CENASPRZEDAZY;
 import static model.dbo.Tables.PRACOWNIK;
+import static model.dbo.Tables.PRODUCENT;
+import static model.dbo.Tables.RODZAJWYROBU;
+import static model.dbo.Tables.WYROB;
+import model.dbo.tables.Wyrob;
+import org.jooq.DSLContext;
+import org.jooq.Field;
 import org.jooq.Record;
+import org.jooq.Record2;
+import org.jooq.Record6;
 import org.jooq.Result;
+import org.jooq.ResultQuery;
+import org.jooq.Table;
 
 /**
  * SŁOWNICZEK: item = wyrób producer = producent provider = dostawca customer =
@@ -28,10 +39,20 @@ import org.jooq.Result;
  */
 public class MainStageController {
 
-    public static Result<Record> itemsResult = DbProperties.getInstance().getDsl().select()
-            .from("Wyrob")
+    public static DSLContext create = DbProperties.getInstance().getDsl();
+    public static Wyrob myTable = WYROB.as("wyr");
+    public static Result<Record6<Integer, String, String, Double, String, Integer>> itemsResult1 = create.select(myTable.ID, myTable.NAZWA, PRODUCENT.NAZWA, CENASPRZEDAZY.CENABRUTTO, RODZAJWYROBU.RODZAJ, myTable.ILOSCDOSTEPNYCH)
+            .from(myTable)
+            .join(CENASPRZEDAZY).on(myTable.ID.equal(CENASPRZEDAZY.IDWYROBU))
+            .join(PRODUCENT).on(myTable.PRODUCENTID.equal(PRODUCENT.ID))
+            .join(RODZAJWYROBU).on(RODZAJWYROBU.ID.equal(myTable.RODZAJWYROBUID))
+            .where(CENASPRZEDAZY.ID
+                    .equal(create.select(CENASPRZEDAZY.ID)
+                            .from(CENASPRZEDAZY)
+                            .where(CENASPRZEDAZY.IDWYROBU.equal(myTable.ID))
+                            .orderBy(CENASPRZEDAZY.DATAZMIANY).limit(1)))
             .fetch();
-    private final ObservableList<Item> data = Item.getObservableList(itemsResult);
+    private final ObservableList<Item> data = Item.getObservableList(itemsResult1);
 
     @FXML
     private ResourceBundle resources;
@@ -361,13 +382,14 @@ public class MainStageController {
          * @param tResult Zmienna z wynikiem pobranym z bazy danych.
          * @return Obiekt typu ObservableList stworzony z wyniku z bazy danych
          */
-        public static ObservableList<Item> getObservableList(Result<Record> tResult) {
+        public static ObservableList<Item> getObservableList(Result<Record6<Integer, String, String, Double, String, Integer>> tResult/*Result<Record> tResult*/) {
             ObservableList<Item> list = FXCollections.observableArrayList();
             Object[][] values = tResult.intoArray();
+            System.out.println("list: "+list.toString());
+            //System.out.println("tuuuuuuuuuuuuuu"+values[0][0].toString()+" "+values[0][1]);
             for (int i = 0; i < values.length; i++) {
-                list.add(new Item(values[i][0].toString(),values[i][1].toString(),values[i][2].toString(), values[i][3].toString(), values[i][4].toString(), values[i][4].toString()));
+                list.add(new Item(values[i][0].toString(), values[i][1].toString(), values[i][2].toString(), values[i][3].toString(), values[i][4].toString(), values[i][5].toString()));
             }
-            System.out.println(values[0].length);
 
             //System.out.println(values.toString());
             return list;
