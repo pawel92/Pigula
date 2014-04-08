@@ -11,10 +11,10 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="Pigula.jar" size="82417" download="eager" />
-    <jar href="lib/controlsfx-8.0.5.jar" size="812620" download="eager" />
-    <jar href="lib/jooq-3.1.0.jar" size="1253450" download="eager" />
-    <jar href="lib/sqljdbc4.jar" size="604032" download="eager" />
+    <jar href="Pigula.jar" size="102296" download="eager" />
+    <jar href="lib/controlsfx-8.0.5.jar" size="812612" download="eager" />
+    <jar href="lib/jooq-3.1.0.jar" size="1253455" download="eager" />
+    <jar href="lib/sqljdbc4.jar" size="604062" download="eager" />
   </resources>
 <security>
   <all-permissions/>
