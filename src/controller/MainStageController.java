@@ -1,14 +1,20 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -16,6 +22,7 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import model.dbo.DbProperties;
 import static model.dbo.Tables.CENASPRZEDAZY;
 import static model.dbo.Tables.PRACOWNIK;
@@ -23,6 +30,7 @@ import static model.dbo.Tables.PRODUCENT;
 import static model.dbo.Tables.RODZAJWYROBU;
 import static model.dbo.Tables.WYROB;
 import model.dbo.tables.Wyrob;
+import model.dbo.tables.records.WyrobRecord;
 import org.jooq.DSLContext;
 import org.jooq.Field;
 import org.jooq.Record;
@@ -38,21 +46,10 @@ import org.jooq.Table;
  * pracownik
  */
 public class MainStageController {
-
-    public static DSLContext create = DbProperties.getInstance().getDsl();
-    public static Wyrob myTable = WYROB.as("wyr");
-    public static Result<Record6<Integer, String, String, Double, String, Integer>> itemsResult1 = create.select(myTable.ID, myTable.NAZWA, PRODUCENT.NAZWA, CENASPRZEDAZY.CENABRUTTO, RODZAJWYROBU.RODZAJ, myTable.ILOSCDOSTEPNYCH)
-            .from(myTable)
-            .join(CENASPRZEDAZY).on(myTable.ID.equal(CENASPRZEDAZY.IDWYROBU))
-            .join(PRODUCENT).on(myTable.PRODUCENTID.equal(PRODUCENT.ID))
-            .join(RODZAJWYROBU).on(RODZAJWYROBU.ID.equal(myTable.RODZAJWYROBUID))
-            .where(CENASPRZEDAZY.ID
-                    .equal(create.select(CENASPRZEDAZY.ID)
-                            .from(CENASPRZEDAZY)
-                            .where(CENASPRZEDAZY.IDWYROBU.equal(myTable.ID))
-                            .orderBy(CENASPRZEDAZY.DATAZMIANY).limit(1)))
-            .fetch();
-    private final ObservableList<Item> data = Item.getObservableList(itemsResult1);
+    private DSLContext create = DbProperties.getInstance().getDsl();
+    private Wyrob myTable = WYROB.as("wyr");
+    private Result<Record6<Integer, String, String, Double, String, Integer>> itemsResult1;
+    private ObservableList<Item> itemsDataTable;
 
     @FXML
     private ResourceBundle resources;
@@ -183,34 +180,17 @@ public class MainStageController {
     private String peselOfEmployee;
 
     public void prepareView(String pesel) {
-        //------wypelnianie kolumny---------
-        Result<Record> tResult = DbProperties.getInstance().getDsl().select()
-                .from("Wyrob")
-                .fetch();
-        //data = Item.getObservableList(tResult);
-        itemsTableId.setCellValueFactory(
-                new PropertyValueFactory<Item, String>("itemsTableId"));
-        itemsTableName.setCellValueFactory(
-                new PropertyValueFactory<Item, String>("itemsTableName"));
-        itemsTableProducer.setCellValueFactory(
-                new PropertyValueFactory<Item, String>("itemsTableProducer"));
-        itemsTableUnitPrice.setCellValueFactory(
-                new PropertyValueFactory<Item, String>("itemsTableUnitPrice"));
-        itemsTableType.setCellValueFactory(
-                new PropertyValueFactory<Item, String>("itemsTableType"));
-        itemsTableAvailability.setCellValueFactory(
-                new PropertyValueFactory<Item, String>("itemsTableAvailability"));
-        itemsTable.setItems(data);
-        //itemsTable.getColumns().addAll(itemsTableId,itemsTableName,itemsTableProducer,itemsTableUnitPrice,itemsTableAvailability);
-
-        //ObservableList<String> t = FXCollections.observableList((List)tResult.getValues(1));
-        ObservableList<String> t = FXCollections.observableList((List) tResult.intoMaps());
-        //System.out.println(tResult.getValues(1).getClass().toString());
-        //itemsTable.getColumns.add(tResult);
-        //System.out.println(t.toString());
-
-        //itemsTableId.setCellValueFactory();
-        //-------koniec wypelniania kolumny
+        //------wypelnianie tabeli---------
+        itemsTablePrepareColumns();
+        updateItemsTable();
+        //-------koniec wypelniania tabeli
+        try {
+            System.out.println("proba1");
+            openWlWyrobu(pesel, true);
+            System.out.println("po probie 1");
+        } catch (IOException ex) {
+            System.out.println("err: "+ex.getMessage());
+        }
         peselOfEmployee = pesel;
         if (peselOfEmployee.equals("root")) {
             whoItIsLabel.setText("Zalogowany użytkownik: root");
@@ -228,7 +208,31 @@ public class MainStageController {
         employeesTab.setDisable(true);
 
     }
-
+/**
+ * 
+ * @param pesel ID otwierajacego okno
+ * @param addMode true-dodanie nowego towaru, false-edycja
+ * 
+ */
+    private void openWlWyrobu(String pesel, boolean addMode) throws IOException {
+        //Parent root = FXMLLoader.load(getClass().getResource("/view/MainStage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/wlWyrobu.fxml"));
+        //System.out.println(loader==null);
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+         
+        stage.setScene(scene);
+        if(addMode){
+            stage.setTitle("Dodaj wyrób");}
+        else{
+            stage.setTitle("Edytuj wyrób");
+        }System.out.println("Wyswietlono");
+        WlWyrobuController controller = (WlWyrobuController)loader.getController();
+        //controller.prepareView(pesel,addMode);
+        stage.show();
+    }
+    
     @FXML
     void addComplaintAction(ActionEvent event) {
     }
@@ -354,7 +358,37 @@ public class MainStageController {
         assert employeesTab != null : "fx:id=\"employeesTab\" was not injected: check your FXML file 'MainStage.fxml'.";
 
     }
-
+    
+    private void itemsTablePrepareColumns(){
+        itemsTableId.setCellValueFactory(
+                new PropertyValueFactory<Item, String>("itemsTableId"));
+        itemsTableName.setCellValueFactory(
+                new PropertyValueFactory<Item, String>("itemsTableName"));
+        itemsTableProducer.setCellValueFactory(
+                new PropertyValueFactory<Item, String>("itemsTableProducer"));
+        itemsTableUnitPrice.setCellValueFactory(
+                new PropertyValueFactory<Item, String>("itemsTableUnitPrice"));
+        itemsTableType.setCellValueFactory(
+                new PropertyValueFactory<Item, String>("itemsTableType"));
+        itemsTableAvailability.setCellValueFactory(
+                new PropertyValueFactory<Item, String>("itemsTableAvailability"));
+    }
+    
+    public void updateItemsTable(){
+    itemsResult1 = create.select(myTable.ID, myTable.NAZWA, PRODUCENT.NAZWA, CENASPRZEDAZY.CENABRUTTO, RODZAJWYROBU.RODZAJ, myTable.ILOSCDOSTEPNYCH)
+            .from(myTable)
+            .join(CENASPRZEDAZY).on(myTable.ID.equal(CENASPRZEDAZY.IDWYROBU))
+            .join(PRODUCENT).on(myTable.PRODUCENTID.equal(PRODUCENT.ID))
+            .join(RODZAJWYROBU).on(RODZAJWYROBU.ID.equal(myTable.RODZAJWYROBUID))
+            .where(CENASPRZEDAZY.ID
+                    .equal(create.select(CENASPRZEDAZY.ID)
+                            .from(CENASPRZEDAZY)
+                            .where(CENASPRZEDAZY.IDWYROBU.equal(myTable.ID))
+                            .orderBy(CENASPRZEDAZY.DATAZMIANY.desc()).limit(1)))
+            .fetch();
+        itemsDataTable = Item.getObservableList(itemsResult1);
+        itemsTable.setItems(itemsDataTable);
+    }
     /**
      * Klasa przechowujaca wiersz tabeli wyrobów
      */
@@ -383,16 +417,12 @@ public class MainStageController {
          * @return Obiekt typu ObservableList stworzony z wyniku z bazy danych
          */
         public static ObservableList<Item> getObservableList(Result<Record6<Integer, String, String, Double, String, Integer>> tResult/*Result<Record> tResult*/) {
-            ObservableList<Item> list = FXCollections.observableArrayList();
+            ObservableList<Item> tmpList = FXCollections.observableArrayList();
             Object[][] values = tResult.intoArray();
-            System.out.println("list: "+list.toString());
-            //System.out.println("tuuuuuuuuuuuuuu"+values[0][0].toString()+" "+values[0][1]);
             for (int i = 0; i < values.length; i++) {
-                list.add(new Item(values[i][0].toString(), values[i][1].toString(), values[i][2].toString(), values[i][3].toString(), values[i][4].toString(), values[i][5].toString()));
+                tmpList.add(new Item(values[i][0].toString(), values[i][1].toString(), values[i][2].toString(), values[i][3].toString(), values[i][4].toString(), values[i][5].toString()));
             }
-
-            //System.out.println(values.toString());
-            return list;
+            return tmpList;
         }
 
         /**
