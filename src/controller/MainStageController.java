@@ -2,15 +2,12 @@ package controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Iterator;
-import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -18,10 +15,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TablePosition;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import model.dbo.DbProperties;
 import static model.dbo.Tables.CENASPRZEDAZY;
@@ -30,15 +30,10 @@ import static model.dbo.Tables.PRODUCENT;
 import static model.dbo.Tables.RODZAJWYROBU;
 import static model.dbo.Tables.WYROB;
 import model.dbo.tables.Wyrob;
-import model.dbo.tables.records.WyrobRecord;
 import org.jooq.DSLContext;
-import org.jooq.Field;
 import org.jooq.Record;
-import org.jooq.Record2;
 import org.jooq.Record6;
 import org.jooq.Result;
-import org.jooq.ResultQuery;
-import org.jooq.Table;
 
 /**
  * SŁOWNICZEK: item = wyrób producer = producent provider = dostawca customer =
@@ -184,13 +179,24 @@ public class MainStageController {
         itemsTablePrepareColumns();
         updateItemsTable();
         //-------koniec wypelniania tabeli
-        try {
-            System.out.println("proba1");
-            openWlWyrobu(pesel, true);
-            System.out.println("po probie 1");
-        } catch (IOException ex) {
-            System.out.println("err: "+ex.getMessage());
-        }
+        
+        //dodanie słuchacza elementu tabeli wyrobów
+        itemsTable.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        itemsTable.setOnMouseClicked(new EventHandler<MouseEvent>(){
+            @Override
+                public void handle(MouseEvent event) {
+                    if (event.getClickCount()==2) {
+                        //double click!
+                        ObservableList<TablePosition> cell = itemsTable.getSelectionModel().getSelectedCells();
+                        int indexOfClickedItem = cell.get(0).getRow();
+                        Item itemClicked = itemsDataTable.get(indexOfClickedItem);
+                        try {
+                            openWlWyrobu(peselOfEmployee, false, itemClicked);
+                        } catch (IOException ex) {}
+                    }
+                }
+            });
+        //koniec dodawania słuchacza do tabeli wyrobów
         peselOfEmployee = pesel;
         if (peselOfEmployee.equals("root")) {
             whoItIsLabel.setText("Zalogowany użytkownik: root");
@@ -214,7 +220,7 @@ public class MainStageController {
  * @param addMode true-dodanie nowego towaru, false-edycja
  * 
  */
-    private void openWlWyrobu(String pesel, boolean addMode) throws IOException {
+    private void openWlWyrobu(String pesel, boolean addMode, Item item) throws IOException {
         //Parent root = FXMLLoader.load(getClass().getResource("/view/MainStage.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/wlWyrobu.fxml"));
         //System.out.println(loader==null);
@@ -227,9 +233,9 @@ public class MainStageController {
             stage.setTitle("Dodaj wyrób");}
         else{
             stage.setTitle("Edytuj wyrób");
-        }System.out.println("Wyswietlono");
+        }
         WlWyrobuController controller = (WlWyrobuController)loader.getController();
-        //controller.prepareView(pesel,addMode);
+        controller.prepareView(pesel,addMode,item);
         stage.show();
     }
     
@@ -246,7 +252,8 @@ public class MainStageController {
     }
 
     @FXML
-    void addItemAction(ActionEvent event) {
+    void addItemAction(ActionEvent event) throws IOException {
+        openWlWyrobu(peselOfEmployee, true, null);
     }
 
     @FXML
@@ -374,7 +381,7 @@ public class MainStageController {
                 new PropertyValueFactory<Item, String>("itemsTableAvailability"));
     }
     
-    public void updateItemsTable(){
+    private void updateItemsTable(){
     itemsResult1 = create.select(myTable.ID, myTable.NAZWA, PRODUCENT.NAZWA, CENASPRZEDAZY.CENABRUTTO, RODZAJWYROBU.RODZAJ, myTable.ILOSCDOSTEPNYCH)
             .from(myTable)
             .join(CENASPRZEDAZY).on(myTable.ID.equal(CENASPRZEDAZY.IDWYROBU))

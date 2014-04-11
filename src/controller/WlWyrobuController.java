@@ -199,4 +199,11 @@ public class WlWyrobuController {
 
     }
 
+    void prepareView(String pesel, boolean addMode, MainStageController.Item item) {
+        if(addMode)
+            System.out.println("Pracownik "+pesel+" kliknął dodanie nowego wyrobu");
+        else
+            System.out.println("Pracownik "+pesel+" kliknął na wyrób "+item.getItemsTableName());
+    }
+
 }
