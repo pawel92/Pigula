@@ -150,7 +150,7 @@ public class WlWyrobuController {
     }
     
     public void prepareView(String pesel, boolean addMode){
-    
+        System.out.println("COSSIETUDZIEJE");
     }
    
     
