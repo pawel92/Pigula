@@ -79,7 +79,7 @@ public class LoginStageController {
         Stage stage = new Stage();
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("System PIGUŁA");
+        stage.setTitle("System bazodanowy PIGUŁA");
         
         MainStageController controller = (MainStageController)loader.getController();
         controller.prepareView(pesel);
